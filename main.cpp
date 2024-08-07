@@ -71,15 +71,16 @@ void parseData(ifstream &in, vector<set<string>> &card, vector<vector<string>> &
         set<string> temp1; //creates a set called temp1
         char *token = strtok(temp2, " "); //splits card nums by each space
         temp1.insert(token);
-        while (strlen(temp2) != 0) {
-            temp1.insert(token);//inserts each token separated by a space into temp1
-            char *token = strtok(nullptr, " ");//splits string temp2 (card nums) by spaces
-//print each token
+        while (line.empty()==1) {
             cout << "token: " << token << " ";
-        }//while strlen!=0 closing brace
+            temp1.insert(token);//inserts each token separated by a space into temp1
+            token = strtok(nullptr, " ");//splits string temp2 (card nums) by spaces
+//print each token
 
-    }//while !eof closing brace
-}//parse data closing brace
+        }//closing brace - while strlen!=0
+cout<<endl;
+    }//closing brace while !eof
+}//closing brace parse data
 
 //Print what's in a set
 /*void display_set(set<string> temp_set) {*//*
